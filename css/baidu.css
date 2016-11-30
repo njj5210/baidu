@@ -18,6 +18,9 @@ header{
     top:0;
     z-index: 999;
 }
+.had{
+    display:none;
+}
 #fullpage{
     width: 100%;
     height:100%;
@@ -29,15 +32,19 @@ header{
 }
 #fullpage section:nth-child(1){
     background: url("../img/bg1.jpg") no-repeat;
+    position:relative;
 }
 #fullpage section:nth-child(2){
     background: url("../img/bg2.jpg") no-repeat;
+    position:relative;
 }
 #fullpage section:nth-child(3){
     background: url("../img/bg3.jpg") no-repeat;
+    position:relative;
 }
 #fullpage section:nth-child(4){
     background: url("../img/bg4.jpg") no-repeat;
+    position:relative;
 }
 .logo{
     display: block;
@@ -47,56 +54,14 @@ header{
     height:40px;
     background: url("../img/header_z_94c6de7 .png") no-repeat 0 0;
 }
-.header {
-    width: 1000px;
-    height: 100%;
 
-    margin: auto;
-}
-.header .index{
-    font-size:15px;
-   float: left;
-    color:#fff;
-    padding:25px;
-    margin-top:5px;
-
-}
-.header .index:nth-of-type(2){
-    margin-left:100px;
-}
-.header .last{
-    font-size:12px;
-    float: left;
-    color:#fff;
-    padding:15px;
-    margin-top:22px;
-
-}
-.header .last:nth-of-type(5){
-    margin-left:100px;
-}
-.header .last:nth-of-type(6)  {
-    margin-left:-25px;
-}
-.header .last:nth-of-type(8){
-   color:#FFDA28;
-}
-.header .last .hot{
-    float: left;
-    margin-top: -25px;
-    margin-left:55px;
-    width: 32px;
-    height: 25px;
-    background: red;
-    background: url("../img/hot.png");
-}
 section:nth-child(1){
     position: relative;
 }
 .zi{
     position: absolute;
     left:170px;
-    top:80px;
+    top:110px;
     width: 501px;
     height:158px;
     background:url("../img/launch_deea86c.png") no-repeat 0 0;
@@ -121,11 +86,22 @@ section:nth-child(1){
 .fly{
     position: absolute;
     left:460px;
-    top:55px;
+    top:100px;
     width: 119px;
     height:78px;
     background:url("../img/flight_ade8ee2.png") no-repeat 0 0;
     animation: fly 3s ease infinite;
+}
+@keyframes fly {
+    0%{
+        top:80px;
+    }
+    40%{
+        top:90px;
+    }
+    100%{
+        top:80px;
+    }
 }
 .ling1{
     position: absolute;
@@ -150,23 +126,66 @@ section:nth-child(1){
     height:126px;
     background:#0b67be url("../img/bg-1_e29bcfa.jpg");
     opacity:0.7;
-    z-index: 1;
+    z-index:3;
 }
-.login{
-    width:340px;
-    height:300px;
-    position: absolute;
-    top:140px;
-     right:220px;
-    background: #4EBFFC;
-    border-radius: 10px;
+
+@media screen and (max-width: 1000px){
+    .login{
+        width:340px;
+        height:300px;
+        position: absolute;
+        top:0;
+        right:0;
+        bottom:0;
+        left:0;
+        margin:auto;
+        z-index:6;
+        background: #4EBFFC;
+        border-radius: 10px;
+    }
+    .img01{
+        width:100%;
+        height:100%;
+        position:absolute;
+        left:-80px;
+        top:0;
+        right:0;
+        bottom:0;
+        margin:auto;
+    }
+    .img01{
+        transition: margin-left 2s linear;
+    }
+    .img01 img{
+        position:absolute;
+        left:0;
+        top:0;
+        right:0;
+        bottom:0;
+        margin:auto;
+        animation: action2 2s .5s linear infinite;
+
+    }
+    @keyframes action2 {
+        0%{
+            transform:rotateY(0deg);
+
+        }
+        100%{
+            transform:rotateY(360deg);
+        }
+    }
 }
+
 .user{
     width: 298.98px;
     height:40px;
     background: #fff;
     margin-left: 20px;
     margin-top: 15px;
+}
+.hezi{
+    display:block;
 }
 .user div{
     width: 15px;
@@ -235,7 +254,6 @@ section:nth-child(1){
     font-family: "微软雅黑";
     outline: none;
 }
-
 .ma{
     width: 100px;
     height: 40px;
@@ -254,7 +272,6 @@ section:nth-child(1){
     line-height: 40px;
     color:#fff;
     font-size: 14px;
-
 }
 .deng{
     width: 298.98px;
@@ -307,16 +324,248 @@ section:nth-child(1){
 .logindi a{
     color:#fff;
 }
-@keyframes fly {
+.had{
+    display:none;
+}
+.haf{
+    display:none;
+}
+.header1{
+  margin-top:60px;
+    display:none;
+}
+.header1 a{
+    display:block;
+    width:100%;
+    height:40px;
+    text-align: center;
+    background:black;
+    border-bottom:1px solid #ccc;
+    opacity: 0.9;
+    color:white;
+    line-height:40px;
+}
+.header1 a:hover{
+    background:white;
+    color:black;
+}
+.header1 a:nth-child(1){
+    animation:action1 2s .2s ease ;
+}
+.header1 a:nth-child(2){
+    animation:action1 2s .4s ease ;
+}
+.header1 a:nth-child(3){
+    animation:action1 2s .6s ease ;
+}
+.header1 a:nth-child(4){
+    animation:action1 2s .8s ease ;
+}
+.header1 a:nth-child(5){
+    animation:action1 2s 1s ease ;
+}
+.header1 a:nth-child(6){
+    animation:action1 2s 1.2s ease ;
+}
+.header1 a:nth-child(7){
+    animation:action1 2s 1.4s ease ;
+}
+.flog{
+    width:30px;
+    height:30px;
+    position:absolute;
+    right:20px;
+    top:20px;
+}
+@keyframes action1{
     0%{
-       top:55px;
-    }
-   40%{
-        top:65px;
+        transform:rotateX(-90deg);
     }
     100%{
-         top:55px;
+        transform:rotateX(0deg);
     }
 }
+.box01{
+    width:30px;
+    border:1px solid white;
+    position:absolute;
+    right:0px;
+    top:10px;
+}
+.box02{
+    width:30px;
+    border:1px solid white;
+    position:absolute;
+    right:0;
+    top:20px;
+}
+.yun{
+    width:100%;
+    height:400px;
+    background: url(../img/03.png);
+    background-size: cover;
+    position:absolute;
+    right:100px;
+    top:200px;
+    animation:yuna 20s linear infinite;
+}
+@keyframes yuna {
+       0%{
+           right:0;
+       }
+    100%{
+        right:50%;
+    }
+}
+.yun1{
+    width:100%;
+    height:400px;
+    background: url(../img/04.png);
+    background-size: cover;
+    position:absolute;
+    right:0;
+    top:0;
+    animation:yuna 20s linear infinite;
+}
+.jiantou{
+    width:30px;
+    height:26px;
+    background: url(../img/09.png);
+    position:absolute;
+    left:0;
+    cursor: pointer;
+    z-index:10;
+    right:0;
+    bottom:30px;
+    margin:auto;
+    animation:action3 1s linear infinite;
+}
+@keyframes action3 {
+    0%{
+        bottom:30px;
+        opacity: 0.5;
+    }
+    50%{
+        bottom:40px;
+        opacity:1;
+    }
+    100%{
+        bottom:30px;
+        opacity: 0.5;
+    }
+}
+@media screen and (min-width:1000px){
+    .box01{
+        display:none;
+    }
+    .login{
+        width:340px;
+        height:300px;
+        position: absolute;
+        top:140px;
+        right:15%;
+        background: #4EBFFC;
+        border-radius: 10px;
+    }
+    .flog{
+        display:none;
+    }
+    .header1{
+        dispaly:none;
+    }
+    .box02{
+        display:none;
+    }
+    .header1{
+        display:none;
+    }
+    .had{
+        display:block;
+    }
+    .haf{
+        display:block;
+    }
+    .header {
+        width: 1000px;
+        height: 100%;
+        margin: auto;
+    }
+    .header .index{
+        font-size:15px;
+        float: left;
+        color:#fff;
+        padding:25px;
+        margin-top:5px;
+    }
+    .header .last{
+        font-size:12px;
+        float: left;
+        color:#fff;
+        padding:25px;
+        margin-top:5px;
+    }
+    .had .index:nth-of-type(1){
+        margin-left:100px;
+    }
+
+    .haf .last{
+        font-size:12px;
+        float: left;
+        color:#fff;
+        padding:15px;
+        margin-top:22px;
+    }
+    .haf .last:nth-of-type(1){
+        margin-left:100px;
+    }
+    .haf .last:nth-of-type(2)  {
+        margin-left:-25px;
+    }
+    .haf .last:nth-of-type(4){
+        color:#FFDA28;
+    }
+    .haf .last .hot{
+        float: left;
+        margin-top: -25px;
+        margin-left:55px;
+        width: 32px;
+        height: 25px;
+        background: red;
+        background: url("../img/hot.png");
+    }
+    .img02{
+        position:absolute;
+        right:0px;
+        top:0px;
+    }
+    .img01{
+        position:absolute;
+        left:0px;
+        top:100px;
+    }
+    .img01{
+        transition: margin-left 2s linear;
+    }
+    .img01 img{
+        animation: action2 2s .5s linear infinite;
+    }
+
+    @keyframes action2 {
+        0%{
+            transform:rotateY(0deg);
+        }
+        100%{
+            transform:rotateY(360deg);
+        }
+    }
+    .boxx{
+        width:1000px;
+        height:400px;
+        position:absolute;
+        left:15%;
+        top:100px;
+    }
+}
+
 
 

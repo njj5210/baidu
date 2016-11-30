@@ -32,6 +32,61 @@ $(function(){
     })
 $("#fullpage")[0].addEventListener("webkitTransitionEnd",function(){
     flag=true;
-})
+});
+    //鼠标滚轮换屏
+    $("#fullpage").fullpage();
+    var flag2=true;
+    $(".flog").click(function(){
+        if(flag2){
+        $(".box01").css({
+            transform:"translate(0,5px) rotate(45deg)"
+        })
+        $(".box02").css({
+            transform:"translate(0,-5px) rotate(-45deg)"
+        })
+            $(".header1").css({
+               display:"block"
+            })
+            flag2=false;
+        }else{
+            $(".box01").css({
+                transform:"translate(0,0) rotate(0deg)"
+            })
+            $(".box02").css({
+                transform:"translate(0,0) rotate(0deg)"
+            })
+            $(".header1").css({
+                display:"none"
+            })
+            flag2=true;
+        }
+
+    });
+
+    $("#fullpage")[0].addEventListener("webkitTransitionEnd", function () {
+        flag = true;
+        $(".section").each(function (index, obj) {
+            if (index == 0) {
+                return;
+            } else {
+                if (index==num) {
+                    $(obj).find(".img01").css({
+                        marginLeft:0
+                    }),
+                    $(obj).find(".img02").css({
+                        transform:"translate(0,0)"
+                    })
+                } else {
+                    $(obj).find(".img01").css({
+                        marginLeft:80
+                    }),
+                        $(obj).find(".img02").css({
+                            transform:"translate(-80px,0)",
+                            transition:"transform 2s ease"
+                        })
+                }
+            }
+        })
+    })
 })
 
