@@ -542,6 +542,7 @@ section:nth-child(1){
         position:absolute;
         left:0px;
         top:100px;
+        margin-left:0;
     }
     .img01{
         transition: margin-left 2s linear;

@@ -7,7 +7,7 @@ $(function(){
             return;
         }
         num++;
-        if(num==$("section").length){
+        if(num>=$("section").length){
             num=$("section").length-1;
             return;
         }
@@ -21,7 +21,7 @@ $(function(){
             return;
         }
         num--;
-        if(num==-1){
+        if(num<=-1){
             num=0;
             return;
         }
@@ -34,7 +34,9 @@ $("#fullpage")[0].addEventListener("webkitTransitionEnd",function(){
     flag=true;
 });
     //鼠标滚轮换屏
-    $("#fullpage").fullpage();
+    $("#fullpage").fullpage({
+        'navigation': true,
+    });
     var flag2=true;
     $(".flog").click(function(){
         if(flag2){
@@ -66,26 +68,26 @@ $("#fullpage")[0].addEventListener("webkitTransitionEnd",function(){
     $("#fullpage")[0].addEventListener("webkitTransitionEnd", function () {
         flag = true;
         $(".section").each(function (index, obj) {
-            if (index == 0) {
-                return;
-            } else {
+
                 if (index==num) {
-                    $(obj).find(".img01").css({
-                        marginLeft:0
-                    }),
-                    $(obj).find(".img02").css({
-                        transform:"translate(0,0)"
-                    })
-                } else {
                     $(obj).find(".img01").css({
                         marginLeft:80
                     }),
+                    $(obj).find(".img02").css({
+                        transform:"translate(-80px,0)",
+                        transition:"transform 2s ease"
+
+                    })
+                } else {
+                    $(obj).find(".img01").css({
+                        marginLeft:0
+                    }),
                         $(obj).find(".img02").css({
-                            transform:"translate(-80px,0)",
+                            transform:"translate(0,0)",
                             transition:"transform 2s ease"
                         })
                 }
-            }
+
         })
     })
 })
